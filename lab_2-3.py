@@ -38,7 +38,10 @@ try:
                                                             #вхождений
 
         for i in range(len(sent)-1):                        #поиск и подсчет слов с помощью метода
-            sum=senten[i].count(word)+senten[i].count(Word) #str.count(sub)
+            if input_word.isdigit()==True:                  #если слово - это число
+                sum=senten[i].count(word)
+            else:
+                sum=senten[i].count(word)+senten[i].count(Word) #str.count(sub)
             sent[i]=sent[i].strip()+'.'+'['+str(sum)+']'    #приписываем кол-во слов после предложения
             
         txt=' '.join(sent)                                  #обьединяем предложения в строку 
@@ -53,4 +56,4 @@ except ValueError:
     print("\nэто не слово")
 
 except FileNotFoundError:
-    print("\nФайл t.txt не найден в директории проекта.\nДобавьте файл в директорию или переименуйте существующий файл.")
+    print("\nФайл text.txt не найден в директории проекта.\nДобавьте файл в директорию или переименуйте существующий файл.")
