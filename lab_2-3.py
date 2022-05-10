@@ -3,10 +3,6 @@ import time
 import sys
 
 try:
-    start = time.time()
-    print("\n-----Результат работы программы-----\n-----Локальное время",time.ctime(),"-----")
-    print()
-        
     with open ('text.txt',encoding='utf-8') as f:
         text=f.read()                                       #открываем и считываем файл
         if text=='':                                        #если файл пуст, то просим...
@@ -14,6 +10,10 @@ try:
             sys.exit()
             
         input_word=input('Введите слово:')                  #просим ввести слово с клавиатуры
+
+        start = time.time()
+        print("\n-----Результат работы программы-----\n-----Локальное время",time.ctime(),"-----")
+        print()
         
         word=' '+input_word+' '                             #отделяем слово пробелом
         Word=' '+input_word.capitalize()+' '                #тоже самое, только с заглавной буквы
