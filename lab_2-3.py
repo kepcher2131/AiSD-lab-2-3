@@ -5,7 +5,7 @@ import sys
 try:
     buffer=1000
     #buffer=int(input('Введите количество символов:'))      #можем ввести buffer с клавиатуры
-    with open ('text.txt',encoding='utf-8') as f:
+    with open ('t.txt',encoding='utf-8') as f:
         text=f.read(buffer)
         if text=='':                                        #если файл пуст, то просим...
             print("\nДобавьте текст в файл.")
@@ -46,10 +46,10 @@ try:
                 sent[i]=sent[i].strip()+'.'+'['+str(sum)+']'    #приписываем кол-во слов после предложения
                     
             txt=' '.join(sent)                                  #обьединяем предложения в строку 
-            tt+=txt.replace('\n', '')
+            txt=txt.replace('\n', '')
+            print(txt)                                          #выводим редактированный текст
             text=f.read(buffer)                                 #считываем файл
 
-        print(tt)                                               #выводим редактированный текст
         finish = time.time()
         result = finish - start                                 #определяем время и память работы программы
         print("\nProgram time: "+ str(result) +" seconds.")
