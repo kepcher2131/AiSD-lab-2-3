@@ -5,7 +5,7 @@ import sys
 try:
     buffer=1000
     #buffer=int(input('Введите количество символов:'))      #можем ввести buffer с клавиатуры
-    with open ('t.txt',encoding='utf-8') as f:
+    with open ('text.txt',encoding='utf-8') as f:
         text=f.read(buffer)
         if text=='':                                        #если файл пуст, то просим...
             print("\nДобавьте текст в файл.")
